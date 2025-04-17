@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Florida 3D Customs</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        .banner {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: cover;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            background: linear-gradient(to right, #19263c 0%, #27457a 10%, #27457a 90%, #19263c 100%);
+            padding: 0;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 20px 50px;
+            margin: 0 30px;
+            background-color: #19263c;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            transition: 0.3s;
+            transform: scale(1);
+        }
+        .nav a:hover {
+            background-color: #2a3955;
+            transform: scale(1.05);
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 140px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #19263c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #27457a;
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner image with link to home -->
+    <a href="index.html">
+        <img src="banner.png" alt="Florida 3D Customs Banner" class="banner">
+    </a>
+
+<div class="nav">
+        <a href="index.html">Home</a>
+        <a href="social-media.html">Social Media</a>
+        <a href="quote.html">Request a Quote</a>
+		<a href="catalog.html">Catalog</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="about.html">About Us</a>
+    </div>
+
+    <h1>Contact Us</h1>
+    <p>If you have any questions, feel free to reach out to us using the form below!</p>
+
+    <!-- Contact Form -->
+<div class="contact-form">
+    <form action="https://formspree.io/f/mblgqeon" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Your Name" required><br>
+        <input type="email" name="email" placeholder="Your Email" required><br>
+        <input type="text" name="subject" placeholder="Subject" required><br>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br>
+        <input type="file" name="upload" required><br>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+
+
+    <script>
+        function submitForm() {
+            // Grab the form data
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
+            const message = document.getElementById("message").value;
+
+            // Simple form validation
+            if (!name || !email || !subject || !message) {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            // Normally, here you would send the data to a server
+            // But for now, we simulate a successful submission
+            alert(`Thank you, ${name}! Your message has been sent.`);
+            
+            // Clear the form fields
+            document.getElementById("contactForm").reset();
+        }
+    </script>
+</body>
+</html>
